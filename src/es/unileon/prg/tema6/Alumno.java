@@ -50,7 +50,12 @@ public class Alumno {
 	
 	//Inicio modificacion Apartado 030101 - ejercicio01
 	
-	
+	public float obtenerNota(){
+
+		return _nota;
+
+	}
+
 	//Fin modificacion Apartado 030101 - ejercicio01
 	
 	

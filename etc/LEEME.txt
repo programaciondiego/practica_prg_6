@@ -1,10 +1,17 @@
 Practica P-CTL
 
-Alumno:
+Alumno: Diego González López
 
-Horas dedicadas:
+Horas dedicadas: 1 hora 30 minutos
 
 Problemas surgidos al realizar la practica:
 
 Respuestas a la preguntas:
 
+Apartado 030101 Ejercicio 04
+	
+	Resultado 1: Compara si de a negada o b son true, con la comparacion negada de n2 mayor que n1, y si son iguales devuelve un valor true.
+
+	Resultado 2:
+
+	Resultado 3:

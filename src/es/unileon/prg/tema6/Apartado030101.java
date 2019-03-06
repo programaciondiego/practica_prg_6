@@ -36,7 +36,7 @@ public class Apartado030101 extends Apartado {
 	 * 
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Mensaje salida aprobado, suspenso");
 
 		//Cambiar el valor de la nota para hacer pruebas
 		float nota=(float) 5.5;
@@ -44,9 +44,19 @@ public class Apartado030101 extends Apartado {
 		Alumno alumno =new Alumno("1000011111","Juan");
 		alumno.asignarNota(nota);
 		System.out.println(alumno);
+
 		//Inicio modificacion
 		
-		
+		if(alumno.obtenerNota()>=5){
+
+ 			System.out.println("El alumno ha aprobado");
+ 		}	
+
+ 		else{
+
+ 			System.out.println("El alumno debe recuperar");
+ 		}
+
 		// Fin modificacion
 	}
 
@@ -60,11 +70,27 @@ public class Apartado030101 extends Apartado {
 	 * la nota del alumno.
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Pedir datos por pantalla");
 
 		// Inicio modificacion
-		
-		
+		Alumno alumno =new Alumno("1000011111","Juan");
+		Teclado teclado =new Teclado();
+
+		System.out.println("Introduzca la nota del alumno");
+
+		float nota = teclado.readFloat();
+		alumno.asignarNota(nota);
+		System.out.println(alumno);
+
+		if(alumno.obtenerNota()>=5){
+
+ 			System.out.println("El alumno ha aprobado");
+ 		}	
+
+ 		else{
+
+ 			System.out.println("El alumno debe recuperar");
+ 		}
 		// Fin modificacion
 	}
 
@@ -79,10 +105,38 @@ public class Apartado030101 extends Apartado {
 	 * mensaje: Los datos que se muestran a continuacion no son correctos
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Filtro de tipo de datos de entrada");
 
 		// Inicio modificacion
 		
+		Alumno alumno =new Alumno("1000011111","Juan");
+		Teclado teclado =new Teclado();
+
+		System.out.println("Introduzca la nota del alumno");
+		float nota = teclado.readFloat();
+
+
+		if (nota == Float.MIN_VALUE) {
+			System.out.println("Los datos que se muestran a continuacion no son correctos");
+		}
+
+		else{ 
+
+			alumno.asignarNota(nota);
+			System.out.println(alumno);
+
+			if(alumno.obtenerNota()>=5){	
+
+ 				System.out.println("El alumno ha aprobado");
+ 			}	
+
+ 			else{
+
+ 				System.out.println("El alumno debe recuperar");
+ 			}
+			
+		}
+
 		// Fin modificacion
 		System.out.println("Fin del ejercicio03");
 	}
@@ -100,7 +154,7 @@ public class Apartado030101 extends Apartado {
 	 * </ul>
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Expresiones condicionales");
 
 		boolean a = true;
 		boolean b = false;
