@@ -2,7 +2,7 @@ Practica P-CTL
 
 Alumno: Diego González López
 
-Horas dedicadas: 3 hora 0 minutos
+Horas dedicadas: 4 horas 0 minutos
 
 Problemas surgidos al realizar la practica:
 
@@ -27,3 +27,8 @@ Apartado 030101 Ejercicio 10
 
 	Depues de quitar los comentarios:
 	Ahora el metodo equals en la clase NumeroEntero compara los valores de n1 y n2, y no los objetos
+
+Apartado 030102 Ejercicio 03
+	
+	Al comparar n1 y n2 se comparan objetos, y no hay objetos mas grandes que otros, los valores de estos objetos si pueden serlo, pero al definir n1 y n2 como objetos, no se pueden comparar y da error
+

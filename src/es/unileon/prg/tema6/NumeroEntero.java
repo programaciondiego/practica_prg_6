@@ -109,25 +109,40 @@ public class NumeroEntero {
 	 // -- Inicio modificacion del ejercicio10 Apartado030101.
 	  boolean equals(NumeroEntero n){
 
-	 	if (_valor==n._valor) {
-	 		return true;
-	 	}else{
-	  	return false	;
-	  }
+	  	boolean salida = false;
 
+	 	if (_valor==n._valor) {
+	 		salida = true;
+	 	}
+	 	if (_valor!=n._valor){
+	  		salida = false;
+	 	}
+	 	return salida;
 	  }
 	 // -- Fin modificacion del ejercicio10 Apartado030101
 	 
 	 
 	
 	
-	/* -- Inicio modificacion del ejercicio02 Apartado030102.
-	 * int comapreTo(NumeroEntero n){
-	 * 
-	 * 
-	 * }
-	 * -- Fin modificacion del ejercicio02 Apartado030102.
-	 */
+	//-- Inicio modificacion del ejercicio02 Apartado030102.
+	 int comapreTo(NumeroEntero n){
+	 	
+	 	int salida = 0;
+
+        if (_valor > n._valor){
+           salida = -1;
+        }
+        else if (_valor < n._valor) {
+           salida = 1; 
+        }
+        else{
+           salida = 0;
+        }
+	 	
+	  return salida;
+	 }
+	// -- Fin modificacion del ejercicio02 Apartado030102.
+	 
 	
 	
 	

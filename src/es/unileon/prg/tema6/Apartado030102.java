@@ -52,7 +52,7 @@ public class Apartado030102 extends Apartado {
 	 *
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Bisiesto no bisiesto");
 		// Inicio modificacion
 		
 		System.out.println("Introduce un año");
@@ -91,26 +91,25 @@ public class Apartado030102 extends Apartado {
 	 *
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Comparar numeros");
 
         // Inicio modificacion
 		
         NumeroEntero n1 = new NumeroEntero(10);
         NumeroEntero n2 = new NumeroEntero(10);
-        
-        /* -- Quitar comentarios
-        if (n1 > n2){
+
+        if (n1.comapreTo(n2) == -1){
         	 System.out.println("N1-> "+n1);
              System.out.println("N1 es mayor que N2");
         }
-        else if (n1 < n2) {
+        else if (n1.comapreTo(n2) ==1) {
             System.out.println("N1 -> "+n1);
             System.out.println("N1 es menor que N2");
         }
-        else
+        else{
            System.out.println("N1 y N2 son iguales -> N1 ->"+n1+" N2 -> "+n2);
-		
-		*/
+        }
+
 		// Fin modificacion
 		
 	}
@@ -136,11 +135,50 @@ public class Apartado030102 extends Apartado {
 
 		// Inicio modificacion
 		
+		System.out.println("Introduce un numero");
+		int n1 = Teclado.readInteger();
+
+		System.out.println("Introduce otro numero");
+		int n2 = Teclado.readInteger();
+
+		System.out.println("¿Que quieres hacer?");
+		System.out.println("[1] - Sumar");
+		System.out.println("[2] - Multiplicar");
+		System.out.println("[3] - Divisores");
+
+		int respuesta = Teclado.readInteger();
+
+		if (respuesta == 1) {
+
+			int suma = n1+n2;
+			System.out.println("La suma de los numeros es: " + suma);
+
+		}else if (respuesta == 2) {
+
+			int multiplicacion = n1*n2;
+			System.out.println("La multiplicacion de los numeros es: " + multiplicacion);
+
+		}else if (respuesta == 3) {
 		
+			if (n1%n2==0) {
+				System.out.println(n1+" es divisble por "+n2);
+			}
+
+			if (n2%n1==0) {
+				System.out.println(n2+" es divisble por "+n1);
+			}
+			else{
+				System.out.println("Los numeros dados no son divisbles entre si.");
+			}
+
+		}else{
+
+			System.out.println("Opcion incorrecta");
+
+		}
 		
         // Fin modificacion
 	}
-
 	/**
 	 * Instruccion if-else - Ejercicio5.
 	 *
@@ -164,6 +202,18 @@ public class Apartado030102 extends Apartado {
 		
 		// Ecuacion2Grado ecuacion=new Ecuacion2Grado(a,b,c);
 		// Inicio modificacion
+
+		System.out.println("Introduce el numero que multiplica a x²");
+		a = Teclado.readInteger();
+		System.out.println("Introduce el numero que multiplica a x");
+		b = Teclado.readInteger();
+		System.out.println("Introduce el termino independiente");
+		c = Teclado.readInteger();
+
+		Ecuacion2Grado ecuacion = new Ecuacion2Grado(a,b,c);
+
+		System.out.println(ecuacion);
+
         // Fin modificacion
 	}
 
