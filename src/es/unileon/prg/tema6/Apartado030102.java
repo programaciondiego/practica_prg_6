@@ -26,12 +26,19 @@ public class Apartado030102 extends Apartado {
 	 * 
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Seleccion de opciones");
 
 		Rectangulo rectangulo=new Rectangulo(10,5);
 		System.out.println("Introduce una opcion (1 - Area, 2 - Perimetro):");
 		// Inicio modificacion
         
+        int opcionSelecionada = Teclado.readInteger();
+
+        if (opcionSelecionada==1) {
+        	System.out.println(rectangulo.getArea());
+        }else{
+        	System.out.println(rectangulo.getPerimetro());
+        }
 		
 		// Fin modificacion
 	}
@@ -48,6 +55,16 @@ public class Apartado030102 extends Apartado {
 		cabecera("02", "");
 		// Inicio modificacion
 		
+		System.out.println("Introduce un año");
+
+		int anyo = Teclado.readInteger();
+
+		if (anyo%400==0 || (anyo%4==0 && anyo%100!=0)) {
+			System.out.println(anyo + " es un año bisiesto");
+		}else {
+			System.out.println(anyo + " no es un año bisiesto");
+		}
+
 		// Fin modificacion
 	}
 

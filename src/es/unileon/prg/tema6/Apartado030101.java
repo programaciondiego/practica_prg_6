@@ -52,7 +52,7 @@ public class Apartado030101 extends Apartado {
  			System.out.println("El alumno ha aprobado");
  		}	
 
- 		else{
+ 		if(alumno.obtenerNota()<5){
 
  			System.out.println("El alumno debe recuperar");
  		}
@@ -87,7 +87,7 @@ public class Apartado030101 extends Apartado {
  			System.out.println("El alumno ha aprobado");
  		}	
 
- 		else{
+ 		if(alumno.obtenerNota()<5){
 
  			System.out.println("El alumno debe recuperar");
  		}
@@ -120,7 +120,7 @@ public class Apartado030101 extends Apartado {
 			System.out.println("Los datos que se muestran a continuacion no son correctos");
 		}
 
-		else{ 
+		if (nota != Float.MIN_VALUE) { 
 
 			alumno.asignarNota(nota);
 			System.out.println(alumno);
@@ -130,7 +130,7 @@ public class Apartado030101 extends Apartado {
  				System.out.println("El alumno ha aprobado");
  			}	
 
- 			else{
+ 			if(alumno.obtenerNota()<5){
 
  				System.out.println("El alumno debe recuperar");
  			}
@@ -185,7 +185,7 @@ public class Apartado030101 extends Apartado {
 	 * 	
 	 */
 	public void ejercicio05() {
-		cabecera("05","");
+		cabecera("05","Nota media");
 
 		Alumno alumno =new Alumno("1000011111","Juan");
 		int nota1=0, nota2=0, nota3=0, sumaNotas=0;
@@ -202,17 +202,20 @@ public class Apartado030101 extends Apartado {
 
 
 		// Inicio modificacion
-		/* -- Quitar comentarios
-		if (nota1 >=5)
+
+		if (nota1 >=5){
            sumaNotas=nota1;
-           if (nota2>=5)
-             sumaNotas=sumaNotas + nota2;
-             if (nota3>=5)
-                sumaNotas=sumaNotas + nota3;
-                media=sumaNotas/3;
-               
-       }
-       */
+        }
+
+        if (nota2>=5){
+        sumaNotas=sumaNotas + nota2;
+    	}
+
+      	if (nota3>=5){
+        sumaNotas=sumaNotas + nota3;
+        }
+        media=sumaNotas/3;
+      
 	   // Fin modificacion
 		
       
@@ -230,12 +233,39 @@ public class Apartado030101 extends Apartado {
 	 *
 	 */
 	public void ejercicio06() {
-		cabecera("06", "");
+		cabecera("06", "Nota media 1 solo if");
+
+		Alumno alumno =new Alumno("1000011111","Juan");
+		int nota1=0, nota2=0, nota3=0, sumaNotas=0;
+		float media=0;
+       
+		System.out.println("Introduce la nota del primer examen:");
+		nota1=Teclado.readInteger();
+
+		System.out.println("Introduce la nota del segundo examen:");
+		nota2=Teclado.readInteger();
+
+		System.out.println("Introduce la nota del tercer examen:");
+		nota3=Teclado.readInteger();
+
 
 		// Inicio modificacion
-		// Fin modificacion
-	}
+		
+		if (nota1 >=5 && nota2 >=5 && nota3 >=5){
 
+        sumaNotas=nota1 + nota2 + nota3;
+		media=sumaNotas/3;	
+
+        }
+        
+	   alumno.asignarNota(media);
+	
+       System.out.println(alumno);
+	
+		// Fin modificacion
+
+
+}
 	/**
 	 * Instruccion if - Ejercicio7.
 	 *
@@ -271,7 +301,7 @@ public class Apartado030101 extends Apartado {
 	 *
 	 */
 	public void ejercicio07() {
-		cabecera("07", "");
+		cabecera("07", "Es un cuadrado");
 		
 		int base=0, altura=0;
 			
@@ -283,7 +313,8 @@ public class Apartado030101 extends Apartado {
 
 		Rectangulo rectangulo= new Rectangulo(base,altura);
 		// Inicio modificacion
-		
+
+		System.out.println(rectangulo);	
 		
 		// Fin modificacion
 	}
@@ -297,11 +328,28 @@ public class Apartado030101 extends Apartado {
 	 *
 	 */
 	public void ejercicio08() {
-		cabecera("08", "");
+		cabecera("08", "Pedir dos numeros e intercambiarlos si el segundo es mayor");
 
 		// Inicio modificacion
 		
+		int num1, num2;
+
+		System.out.println("Dame un numero");
+		num1 = Teclado.readInteger();
+
+		System.out.println("Dame otro numero");
+		num2 = Teclado.readInteger();
+
+		if (num1<num2) {
+			
+			int buffer = num1;
+			num1 = num2;
+			num2 = buffer;
+
+		}
 		
+		System.out.println(num1+" es mayor que "+num2);
+
 		// Fin modificacion
 	}
 

@@ -2,7 +2,7 @@ Practica P-CTL
 
 Alumno: Diego González López
 
-Horas dedicadas: 1 hora 30 minutos
+Horas dedicadas: 3 hora 0 minutos
 
 Problemas surgidos al realizar la practica:
 
@@ -15,3 +15,15 @@ Apartado 030101 Ejercicio 04
 	Resultado 2:
 
 	Resultado 3:
+
+Apartado 030101 Ejercicio 09
+	
+	Al definir los valores en la clase NumeroEntero, cuando los compara, compara los objetos y no los valores, y los objetos nunca son iguales.
+
+Apartado 030101 Ejercicio 10
+
+	Antes de quitar los comentarios:
+	Como en el ejercicio anterior, al comparar n1 y n2 compara los objetos, que son distintos, pero al igualar aux con n1, n1 y aux son iguales
+
+	Depues de quitar los comentarios:
+	Ahora el metodo equals en la clase NumeroEntero compara los valores de n1 y n2, y no los objetos
