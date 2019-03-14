@@ -23,9 +23,20 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Suma 1 al 100");
 
-		// Inicio modificacion		
+		// Inicio modificacion	
+
+		int suma = 0;
+
+		for (int i=1; i < 100; i++) {
+			
+			suma = suma + i;
+
+		}
+
+		System.out.print("La suma de los numeros comprendidos entre el 1 y el 100 es " +  suma);
+
         // Fin modificacion
 	}
 
@@ -36,9 +47,23 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Media impares menores que 1000");
 
 		// Inicio modificacion
+
+		int suma = 0, casos = 0;
+
+		for (int i=999; i > 0 ; i = i-2 ) {
+			
+			casos++;
+			suma = suma + i;
+
+		}
+
+		float media = suma/casos;
+
+		System.out.print("La media de los numeros menores que 1000 es "+ media);
+
 		// Fin modificacion
 	}
 
@@ -50,10 +75,31 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Suma de los numeros comprendidos entre los valores dados");
 
 		// Inicio modificacion
-		
+
+		int n1, n2, suma;
+		suma = 0;
+		System.out.println("Introduce un numero");
+		n1= Teclado.readInteger();
+
+		System.out.println("Introduce otro numero");
+		n2= Teclado.readInteger();
+
+		if (n1<n2) {
+
+			for (int i = n1+1; i<n2 ; i++ ) {
+				suma = suma + i;
+			}
+		}else{
+			for (int i = n1-1; i>n2 ; i-- ) {
+				suma = suma + i;		
+			}
+		}
+
+		System.out.print("La suma de todos los numeros comprendidos entre el "+n1+" y el "+n2+" es igual a "+suma);
+
 		// Fin modificacion
 	}
 
@@ -65,10 +111,37 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Cuenta los 3, 5 y 7 introducidos");
 
 		// Inicio modificacion
 		
+		int number, three, five, seven;
+		number = three = five = seven = 0;
+
+		for (int i=0; i<10 ; i++ ) {
+			System.out.println("Introduce un numero");
+			number = Teclado.readInteger();
+
+			switch (number) {
+				case 3:
+					three++;
+					break;
+
+				case 5:
+					five++;
+					break;
+
+				case 7:
+					seven++;
+					break;
+
+				default:
+			}
+		}
+
+		System.out.println("Hay "+three+" treses, "+five+" cincos y "+seven+" sietes");
+
+
 		// Fin modificacion
 	}
 
@@ -80,9 +153,33 @@ public class Apartado030201 extends Apartado {
 	 * 
 	 */
 	public void ejercicio05() {
-		cabecera("05","");
+		cabecera("05","Mayor y menor de 10 numeros");
 
 		// Inicio modificacion
+
+		int mayor = 0;
+		int menor = 0;
+		int number = 0;
+
+		System.out.println("Introduce un numero");
+		number = Teclado.readInteger();
+		menor = number;
+		mayor = number;
+
+		for ( int i = 0; i<9 ; i++ ) {
+
+			System.out.println("Introduce un numero");
+			number = Teclado.readInteger();
+
+			if (mayor<number) {
+				mayor=number;
+			}else if (menor>number) {
+				menor=number;
+			}
+		}
+
+		System.out.println("El numero mayor introducido es "+mayor+", y el menor es "+menor);
+
         // Fin modificacion
 	}
 
@@ -98,10 +195,35 @@ public class Apartado030201 extends Apartado {
 	 * [Falta enunciado]
 	 */
 	public void ejercicio06() {
-		cabecera("06", "");
+		cabecera("06", "Sumar pares  impares");
 
 		// Inicio modificacion
 		
+		int n1, n2, intercambiador;
+		int sumaPares = 0;
+		int sumaImpares = 0;
+
+		System.out.println("Introduce un numero");
+		n1 = Teclado.readInteger();
+		System.out.println("Introduce un numero");
+		n2 = Teclado.readInteger();
+		if (n2>n1) {
+			intercambiador = n1;
+			n1 = n2;
+			n2 = intercambiador;
+		}
+
+		for (int i = n1-1; i > n2; i--) {
+		
+			if (i%2==0) {
+				sumaPares = sumaPares + 1;
+			}else{
+				sumaImpares = sumaImpares +1;
+			}
+		}
+
+		System.out.println("Hay "+sumaPares+" numeros pares, y "+sumaImpares+" impares entre el "+n1+" y el "+n2);
+
 		
 		// Fin modificacion
 	}

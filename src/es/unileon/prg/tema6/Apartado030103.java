@@ -25,9 +25,51 @@ public class Apartado030103 extends Apartado {
 	 *
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Calificacion nota");
 
 		// Inicio modificacion
+
+		int nota;
+
+		System.out.println("Porfavor, introduzca la calificacion del alumno");
+
+		nota = Teclado.readInteger();
+
+		switch(nota){
+
+			case 1://next 
+			case 2://next
+			case 3://next
+			case 4:
+				System.out.println("Insuficiente");
+				break;
+
+			case 5:
+				System.out.println("Suficiente");
+				break;
+
+			case 6:
+				System.out.println("Bien");
+				break;
+
+			case 7://next
+			case 8:
+				System.out.println("Notable");
+				break;
+
+			case 9:
+				System.out.println("Sobresaliente");
+				break;	
+
+			case 10:
+				System.out.println("Matricula");
+				break;	
+
+			default:
+				System.out.println("La nota introducida no esta entre el 1 y el 10");
+
+		}
+
         // Fin modificacion
 	}
 
@@ -40,9 +82,29 @@ public class Apartado030103 extends Apartado {
 	 *
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Anillos");
 
 		// Inicio modificacion
+
+		System.out.println("Introduce otro numero");
+		int n = Teclado.readInteger();
+
+		switch (n) {
+
+			case 6:
+			case 9:
+				System.out.println(n+" tiene 1 anillo");
+			break;
+
+			case 8:
+				System.out.println(n+" tiene 2 anillos");
+			break;
+
+			default:
+				System.out.println(n+" no tiene anillos");	
+
+		}
+
 		// Fin modificacion
 	}
 
@@ -54,9 +116,59 @@ public class Apartado030103 extends Apartado {
 	 *
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Sumar, multiplicar, divisores con switch");
 
 		// Inicio modificacion
+
+		System.out.println("Introduce un numero");
+		int n1 = Teclado.readInteger();
+
+		System.out.println("Introduce otro numero");
+		int n2 = Teclado.readInteger();
+
+		System.out.println("¿Que quieres hacer?");
+		System.out.println("[1] - Sumar");
+		System.out.println("[2] - Multiplicar");
+		System.out.println("[3] - Divisores");
+
+		int respuesta = Teclado.readInteger();
+
+		switch (respuesta) {
+			
+			case 1:
+
+					int suma = n1+n2;
+					System.out.println("La suma de los numeros es: " + suma);
+
+				break;
+
+			case 2:
+
+					int multiplicacion = n1*n2;
+					System.out.println("La multiplicacion de los numeros es: " + multiplicacion);
+
+				break;
+
+			case 3:
+
+					if (n1%n2==0) {
+						System.out.println(n1+" es divisble por "+n2);
+					}
+
+					if (n2%n1==0) {
+						System.out.println(n2+" es divisble por "+n1);
+					}
+					else{
+						System.out.println("Los numeros dados no son divisbles entre si.");
+					}
+
+				break;
+
+			default:
+				System.out.println("Opcion incorrecta");
+
+		}
+
 		// Fin modificacion
 	}
 
@@ -69,9 +181,43 @@ public class Apartado030103 extends Apartado {
 	 * 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Vocal mayuscula / minuscula");
 
 		// Inicio modificacion
+
+		System.out.println("Introduce una cadena de caracteres");
+		String cadena;
+		char caracter;
+
+		cadena = Teclado.readString();
+
+		caracter = cadena.charAt(0);
+
+		switch(caracter){
+
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				System.out.println("El primer caracter de la cadena '" + cadena + "' es una vocal minuscula");
+				break;
+
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+				System.out.println("El primer caracter de la cadena '" + cadena + "' es una vocal mayuscula");
+				break;
+
+			default:
+				System.out.println("El primer caracter de la cadena '" + cadena + "' no es una vocal");
+
+
+		}
+
+
 		// Fin modificacion
 	}
 }

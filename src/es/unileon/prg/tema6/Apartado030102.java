@@ -131,7 +131,7 @@ public class Apartado030102 extends Apartado {
 	 *  	 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Suma, multiplicar, divisores");
 
 		// Inicio modificacion
 		
@@ -226,9 +226,42 @@ public class Apartado030102 extends Apartado {
 	 *
 	 */
 	public void ejercicio06() {
-		cabecera("06", "");
+		cabecera("06", "Numero mayor");
 
 		// Inicio modificacion
+
+		System.out.println("Por favor, introduzca un numero");
+		int n1 = Teclado.readInteger();
+		System.out.println("Por favor, introduzca otro numero");
+		int n2 = Teclado.readInteger();
+		System.out.println("Por favor, introduzca otro numero");
+		int n3 = Teclado.readInteger();
+
+		StringBuffer salida = new StringBuffer();
+
+		int mayor = n1;
+
+		if (n1==n2&&n2==n3) {
+			salida.append("Los tres numeros son "+n2+", y son iguales.  ");
+		}else{
+			if (n1==n2) {
+			salida.append("El numero "+n1+" esta repetido 2 veces  ");
+			}else if (n2==n3) {
+			salida.append("El numero "+n2+" esta repetido 2 veces  ");
+			}else if (n1==n3) {
+			salida.append("El numero "+n3+" esta repetido 2 veces  ");
+			}
+		}
+
+		if (mayor < n2) {
+		mayor = n2;
+		}else if(mayor < n3){
+			mayor = n3;
+		}
+		salida.append("El numero dado mas grande es "+mayor+".");
+
+		System.out.println(salida.toString());
+
 		// Fin modificacion
 	}
 }
