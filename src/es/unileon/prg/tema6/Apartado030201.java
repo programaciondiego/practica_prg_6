@@ -208,6 +208,7 @@ public class Apartado030201 extends Apartado {
 		System.out.println("Introduce un numero");
 		n2 = Teclado.readInteger();
 		if (n2>n1) {
+
 			intercambiador = n1;
 			n1 = n2;
 			n2 = intercambiador;
@@ -238,9 +239,32 @@ public class Apartado030201 extends Apartado {
 	 *
 	 */
 	public void ejercicio07() {
-		cabecera("07", "");
+		cabecera("07", "Cadena vocales consonantes");
 
 		// Inicio modificacion
+
+		String cadenaDada;
+		StringBuffer cadenaVocales = new StringBuffer();
+		StringBuffer cadenaConsonantes = new StringBuffer();
+
+		System.out.println("Introduce una palabra o frase");
+		cadenaDada = Teclado.readString();
+		cadenaDada = cadenaDada.toLowerCase();
+
+		for (int i = 0; i < cadenaDada.length(); i++) {
+			
+			if (cadenaDada.charAt(i)!=' ') {
+				if (cadenaDada.charAt(i)=='a'||cadenaDada.charAt(i)=='e'||cadenaDada.charAt(i)=='i'||cadenaDada.charAt(i)=='o'||cadenaDada.charAt(i)=='u') {
+					cadenaVocales.append(cadenaDada.charAt(i));
+				}else{
+					cadenaConsonantes.append(cadenaDada.charAt(i));
+				}			
+			}
+		}
+
+		System.out.println("Cadena de vocales: " + cadenaVocales.toString().toUpperCase());
+		System.out.println("Cadena de consonantes: " + cadenaConsonantes.toString().toUpperCase());		
+
 		// Fin modificacion
 	}
 
@@ -265,9 +289,33 @@ public class Apartado030201 extends Apartado {
 	 *
 	 */
 	public void ejercicio08() {
-		cabecera("08", "");
+		cabecera("08", "Cadena mas larga");
 
 		// Inicio modificacion
+
+		String cadenaDada;
+		String cadenaMasLarga = "";
+		int numeroCadenas = 0;
+
+		System.out.println("Introduce el numero de cadenas a leer");
+		numeroCadenas = Teclado.readInteger();
+
+		for (int i = 0; i < numeroCadenas; i++ ) {
+			
+			System.out.println("Introduce una cadena");
+
+			cadenaDada = Teclado.readString();
+
+			if (cadenaDada.length()>cadenaMasLarga.length()) {
+				
+				cadenaMasLarga = cadenaDada;
+
+			}
+
+		}
+
+		System.out.println("La cadena mas larga es: "+cadenaMasLarga);
+
 		// Fin modificacion
 	}
 
@@ -294,28 +342,33 @@ public class Apartado030201 extends Apartado {
 	 *     
 	 */
 	public void ejercicio09() {
-		cabecera("09", "");
+		cabecera("09", "Rectangulo con mayor area");
 
 		// Inicio modificacion
 		
-		/* Quitar comentarios
-	    int n=4; //Numero de rectangulos a leer
-		 Rectangulo rectanguloMaximo,rectangulo;
-		
-		for ()
+		int n=4; //Numero de rectangulos a leer
+		Rectangulo rectanguloMaximo,rectangulo;
+		int base;
+		int altura;
+		int area;
+		rectanguloMaximo = new Rectangulo(0,0);
+
+		for (int i = 1; i <= n; i++)
 		{
-			System.out.print("Introduce la base del rectangulo "+i+" :");
+			System.out.println("Introduce la base del rectangulo "+i+" :");
 			base=Teclado.readInteger();
-			System.out.print("Introduce la altura del rectangulo "+i+" :");
+			System.out.println("Introduce la altura del rectangulo "+i+" :");
 			altura=Teclado.readInteger();
-			rectangulo=new Rectangulo(base,altura);
+			rectangulo = new Rectangulo(base,altura);
 			
-			
+			if (rectanguloMaximo.compareTo(rectangulo)==-1||rectanguloMaximo.compareTo(rectangulo)==0) {
+				rectanguloMaximo = rectangulo;
+			}
+
 		}
 		
-		System.out.println("El rectangulo con mayor area es "+ );
+		System.out.println("El rectangulo con mayor area es "+ rectanguloMaximo.toString());
 		
-		*/
 		// Fin modificacion
 	}
 			

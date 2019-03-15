@@ -2,7 +2,7 @@ Practica P-CTL
 
 Alumno: Diego González López
 
-Horas dedicadas: 5 horas 10 minutos
+Horas dedicadas: 6 horas 0 minutos
 
 Problemas surgidos al realizar la practica:
 
@@ -10,11 +10,31 @@ Respuestas a la preguntas:
 
 Apartado 030101 Ejercicio 04
 	
-	Resultado 1: Compara si de a negada o b son true, con la comparacion negada de n2 mayor que n1, y si son iguales devuelve un valor true.
+	Resultado 1: La sentencia es true si (!a && b) o !(n2>n1) son true.
 
-	Resultado 2:
+		La sentencia (!a && b) es true solo si !a y b son true, dado que el negado de a y b son false, esa sentencia es false.
 
-	Resultado 3:
+		La sentencia !(n2>n1) es true si (n2>n1) es false, como n2=8 y n1=5, (n2>n1) es true, y por tanto !(n2>n1) es false.
+
+		Como ni (!a && b) ni !(n2>n1) son true, la sentencia es false y por tanto el if no se ejecuta.
+
+
+	Resultado 2: La sentencia es true si una de las dos (!a || b) o !(n1>n2) son true.
+
+		La sentencia (!a || b) es true si a es false (dado que es su inverso y no a) o si b es true, como a=true y b=false, (!a || b) es false. 
+
+		La sentencia !(n1>n2) es true si n1<n2, como n1=5 y n2=8, esto se cumple, por tanto la sentencia es true.
+
+		Como !(n1>n2) es true, se cumple la condicion de que al menos una de las sentencias sea true y el valor global es true, por tanto el if se ejecuta.
+
+
+	Resultado 3: La sentencia (n1>=n2) && (a || b) es true si ambas, (n1>=n2) y (a || b), son true.
+
+		La sentencia (n1>=n2) es true si n1 es mayor o igual a n2, como n1<n2, (n1>=n2) es false.
+
+		La sentencia (a || b) es true si a y b son true, como b=false, (a || b) es false.
+
+		Como ni (n1>=n2) ni (a || b) son true, (n1>=n2) && (a || b) es false, el if no se ejecuta.
 
 Apartado 030101 Ejercicio 09
 	

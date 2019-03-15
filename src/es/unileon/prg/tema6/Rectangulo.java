@@ -171,13 +171,24 @@ public class Rectangulo {
 		
 	}
 	
-	/* -- Inicio modificacion del ejercicio09 Apartado030201.
-	 * int compareTo(Rectangulo rectangulo){
-	 * 
-	 * 
-	 * }
-	 * -- Fin modificacion del ejercicio09 Apartado030201.
-	 */
+	//-- Inicio modificacion del ejercicio09 Apartado030201.
+	 int compareTo(Rectangulo rectangulo){
+	  	
+	 	int salida;
+
+	 	if (getArea() < rectangulo.getArea()) {
+	 		salida = -1;
+	 	}else if (getArea() == rectangulo.getArea()) {
+	 		salida = 0;
+	 	}else{
+	 		salida = 1;
+	 	}
+
+	  	return salida;	
+	  
+	  }
+	//-- Fin modificacion del ejercicio09 Apartado030201.
+	 
 	
 	
 	
