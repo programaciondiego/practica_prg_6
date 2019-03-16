@@ -25,12 +25,27 @@ public class Apartado030202 extends Apartado {
 	 *
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Numero menor de los dados");
 
 		// Inicio modificacion
-		
-		
-		
+		int nMenor=0;
+		int nDado;
+		int contador=0;
+
+		while(contador!=10){
+			System.out.println("Introduzca un numero");
+			nDado = Teclado.readInteger();
+
+			if (contador == 1) {
+				nMenor=nDado;
+			}
+			if (nDado<nMenor) {
+				nMenor=nDado;
+			}
+			contador++;
+		}
+
+		System.out.println("El numero menor de los dados es "+nMenor);
 					
         // Fin modificacion
 	}
@@ -42,10 +57,21 @@ public class Apartado030202 extends Apartado {
 	 * a cero  o hasta que el usuario introduzca dos veces seguidas el mismo numero.
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Leer numeros hasta que se de un 0 o dos iguales seguidos");
 
 		// Inicio modificacion
 		
+		int nDado=1;
+		int nDadoRetardo = 0; //Almacena el numero anterior al actual para comprobar si hay dos numeros iguales seguidos
+
+		while((nDadoRetardo != nDado) && (nDado!=0)){
+
+			nDadoRetardo = nDado;
+
+			System.out.println("Introduzca un numero");
+			nDado = Teclado.readInteger();
+
+		}
 		
 		// Fin modificacion
 	}
@@ -53,7 +79,7 @@ public class Apartado030202 extends Apartado {
 	/**
 	 * Instruccion while - Ejercicio3.
 	 *
-	 * Programar el codigo  que sume los numeros pares por un lado y los impares por otro  entre
+	 * Programar el codigo  que sume los numeros pares por un lado y los impares por otro entre
 	 * dos numeros enteros introducidos por el usuario.
 	 * 
 	 * Nota: similar al ejercicio06() de la clase Apartado030201 pero utilizando la sentencia while
@@ -63,9 +89,45 @@ public class Apartado030202 extends Apartado {
 	 * 
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Sumar pares e impares");
 
 		// Inicio modificacion
+
+		NumeroEntero numerosPares = new NumeroEntero();
+		NumeroEntero numerosImpares = new NumeroEntero();
+		NumeroEntero numeroDado1 = new NumeroEntero();
+		NumeroEntero numeroDado2 = new NumeroEntero();
+		NumeroEntero contador = new NumeroEntero();
+
+		System.out.println("Introduzca un numero");
+		numeroDado1.setValor(Teclado.readInteger());
+		System.out.println("Introduzca otro numero");
+		numeroDado2.setValor(Teclado.readInteger());
+		contador = numeroDado1;
+
+		if (contador.getValor()>numeroDado2.getValor()) {
+			contador.decrementar();
+		}else {
+			contador.incrementar();
+		}
+
+		while(contador.getValor() != numeroDado2.getValor()){
+
+			if ((contador.getValor()%2)==0) {
+				numerosPares = numerosPares.suma(contador);
+			}else{
+				numerosImpares = numerosImpares.suma(contador);
+			}
+
+			if (contador.getValor()>numeroDado2.getValor()) {
+				contador.decrementar();
+			}else{
+				contador.incrementar();
+			}
+		}
+
+			System.out.println("La suma los numeros pares es "+numerosPares.toString()+" y la de los impares es "+numerosImpares.toString());
+
 		// Fin modificacion
 	}
 
@@ -78,9 +140,34 @@ public class Apartado030202 extends Apartado {
 	 * 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Media hasta introducir tres 5");
 
 		// Inicio modificacion
+
+		float numeroDado=0;
+		int contadorCincos=0;
+		int contadorVueltas=0;
+		float suma=0;
+		float media=0;
+
+		while(contadorCincos!=3){
+
+			contadorVueltas++;
+
+			System.out.println("Introduzca un numero");
+			numeroDado = Teclado.readInteger();
+
+			suma = suma + numeroDado;
+
+			if (numeroDado == 5) {
+				contadorCincos++;
+			}
+		}
+
+		media = suma/contadorVueltas;
+
+		System.out.println("La media es "+media);
+
 		// Fin modificacion
 	}
 
