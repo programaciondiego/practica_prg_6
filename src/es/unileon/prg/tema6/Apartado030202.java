@@ -185,10 +185,20 @@ public class Apartado030202 extends Apartado {
 	 *
 	 */
 	public void ejercicio05() {
-		cabecera("05","");
+		cabecera("05","Digitos, inverso, capicua");
 
 		// Inicio modificacion
-        // Fin modificacion
+
+		NumeroEntero numeroDado = new NumeroEntero();
+
+		System.out.println("Introduzca un numero");
+		numeroDado.setValor(Teclado.readInteger());
+
+		System.out.println(numeroDado+" tiene "+numeroDado.numeroDigitos()+" digitos");
+		System.out.println("El inverso de "+numeroDado+" es: "+numeroDado.inverso());
+		System.out.println(numeroDado+" es capicua: "+numeroDado.esCapicua());
+
+      // Fin modificacion
 	}
 
 	/**
@@ -208,7 +218,7 @@ public class Apartado030202 extends Apartado {
 	 * <li>	Implementar el metodo jugar de la clase Partido
 	 * <li>	Simulara que se juega el partido entre los dos jugadores generando el ganador de forma aleatoria
 	 * <li>	El jugador con mayor puntuacion en la ATP tendra mayor posibilidad de ganar.
-	 * <li> El ganador del partido aumentara en 1 punto su puntuacion en el ranking.
+	 * <li>  El ganador del partido aumentara en 1 punto su puntuacion en el ranking.
 	 * <li>	Nota 1:
 	 * <ul>	Una  forma de generar el ganador puede ser:
 	 * <li>	
@@ -226,7 +236,7 @@ public class Apartado030202 extends Apartado {
 	 */
 	
 	public void ejercicio06() {
-		cabecera("06", "");
+		cabecera("06", "Partido");
 		
 		Jugador j1=new Jugador("Federer",5);
         Jugador j2=new Jugador("Nadal",4);

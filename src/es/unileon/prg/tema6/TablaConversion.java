@@ -47,6 +47,24 @@ public class TablaConversion
         // Imprimir cabecera
         //Inicio modificacion del ejercicio10 del Apartado030201
 
+        StringBuffer cabecera = new StringBuffer();
+
+        if (this.columnas%2!=0) {
+            this.columnas=this.columnas+1;
+        }
+
+        for (int i = 0; i < this.columnas; i++) {
+            
+            if (i%2==0) {
+                cabecera.append('C');
+                cabecera.append(SEPARADOR);   
+            }else{
+                cabecera.append('F');
+                cabecera.append(SEPARADOR);  
+            }
+        }
+            System.out.println(cabecera);
+            System.out.println();
         
         
         //Fin modificacion del ejercicio10 del Apartado030201
@@ -71,11 +89,29 @@ public class TablaConversion
          int f; // temperatura en fahrenheit
          //Inicio modificacion del ejercicio10 del Apartado030201
 
-         
+         StringBuffer fila = new StringBuffer();
+
+         if (estaLinea==0) {
+             c=0;
+         }else{
+            c = ((this.columnas/2)*estaLinea);
+         }
+
+         for (int i=0; i<this.columnas/2 ; i++) {
+
+             f=fahrenheit(c);
+
+             fila.append(c);
+             fila.append(SEPARADOR);
+             fila.append(f);
+             fila.append(SEPARADOR);
+
+             c++;
+         }
          
          //Fin modificacion del ejercicio10 del Apartado030201
                   
-         System.out.println();
+         System.out.println(fila);
      }
 
 

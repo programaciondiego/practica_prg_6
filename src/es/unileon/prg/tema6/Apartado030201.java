@@ -395,7 +395,7 @@ public class Apartado030201 extends Apartado {
 	 * 45	113	46	114	47	116	48	118	49	120</pre>	
 	 */
 	public void ejercicio10() {
-		cabecera("10", "");
+		cabecera("10", "TablaConversion");
 
 		TablaConversion tabla=new TablaConversion(5,10);
 		tabla.imprimir();
