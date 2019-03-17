@@ -40,14 +40,45 @@ public class Cheque
     	boolean esFalso=false;
     	//Inicio modificacion - ejercicio02() de la clase Apartado030204 -.
     	
-        int contadorCeros = 0;
-        int numeroActual;
-        int contadorNoCeros = 0;
+        int contadorCeros = 1;
+        int contadorNoCeros = 1;
+        char numeroActual;
+        char numeroAnterior;
+        int posicion = 1;
+
+        numeroActual = _numeroDeCheque.charAt(posicion);
 
         do{
 
-        }while(contadorCeros < 3 || contadorNoCeros < 4);
-    	
+        numeroAnterior = numeroActual;
+        numeroActual = _numeroDeCheque.charAt(posicion);
+
+        if(numeroActual == numeroAnterior){
+
+            switch(numeroActual){
+                case 0:
+                   contadorCeros++;
+                   break;
+     
+                default:
+                    contadorNoCeros++;
+            }
+
+
+        }else{
+
+            contadorCeros = contadorNoCeros = 1;
+        }
+
+        posicion++;
+
+        }
+        while(contadorNoCeros < 4 && contadorCeros < 3 && posicion != _DIGITOS );
+
+
+        if(contadorNoCeros == 4 || contadorCeros == 3){
+            esFalso = true;
+        }
     	
     	//Fin modificacion - ejercicio02() de la clase Apartado030204 -.
     	return esFalso;
