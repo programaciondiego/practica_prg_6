@@ -33,7 +33,7 @@ public class Ecuacion2Grado{
 		StringBuffer soluciones = new StringBuffer();
 
 
-		if (Math.pow(b,2)-(4*a*c) > 0) {
+		if (Math.pow(b,2)-(4*a*c) >= 0) {
 			resultado1 = (((-b)+(Math.sqrt(Math.pow(b,2)-(4*a*c))))/2*a);
 			resultado2 = (((-b)-(Math.sqrt(Math.pow(b,2)-(4*a*c))))/2*a);  
 

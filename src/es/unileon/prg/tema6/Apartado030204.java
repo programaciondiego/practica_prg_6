@@ -23,9 +23,52 @@ public class Apartado030204 extends Apartado {
 	 * entre dos numeros n1 y n2 introducidos por teclado
 	 */
 	public void ejercicio01() {
-		cabecera("01","");
+		cabecera("01","Numeros perfectos");
 
 		// Inicio modificacion
+
+		int n1;
+		int n2;
+		int numero = 0 ;
+		int cambiador = 0;
+		int divisor = 0;
+		int sumaDivisores = 0;
+		int contador = 1;
+
+		System.out.println("Introduzca un numero");
+		n1 = Teclado.readInteger();
+		System.out.println("Introduzca un numero");
+		n2 = Teclado.readInteger();
+
+		if (n2>n1) {
+			cambiador = n1;
+			n1 = n2;
+			n2 = cambiador;
+		}
+
+		numero = n2+1;
+
+		for (int i = n2+1; i<n1 ; i++ ) {
+
+			sumaDivisores = 0;
+			contador = divisor = 1;
+
+			do{
+				if ( (numero % divisor) == 0 ) {
+					sumaDivisores = sumaDivisores + divisor;
+				}
+				contador++;
+				divisor++;
+
+			}while(contador < numero);
+
+			if (sumaDivisores == numero) {
+				System.out.println();
+				System.out.println(numero + " es un numero perfecto");
+			}
+			numero ++;
+		}		
+
         // Fin modificacion
 	}
 
@@ -42,11 +85,11 @@ public class Apartado030204 extends Apartado {
 	 * 
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Comprabante de cheques");
 
 		Cheque cheque=null;
 		
-		//Modificar el numero de cheque para peobar
+		//Modificar el numero de cheque para probar
 		//cheque=new Cheque("1000988887");    
         //cheque=new Cheque("1010098888");
         //cheque=new Cheque("1009808880");   

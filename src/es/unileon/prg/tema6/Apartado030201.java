@@ -254,11 +254,19 @@ public class Apartado030201 extends Apartado {
 		for (int i = 0; i < cadenaDada.length(); i++) {
 			
 			if (cadenaDada.charAt(i)!=' ') {
-				if (cadenaDada.charAt(i)=='a'||cadenaDada.charAt(i)=='e'||cadenaDada.charAt(i)=='i'||cadenaDada.charAt(i)=='o'||cadenaDada.charAt(i)=='u') {
-					cadenaVocales.append(cadenaDada.charAt(i));
-				}else{
-					cadenaConsonantes.append(cadenaDada.charAt(i));
-				}			
+
+				switch (cadenaDada.charAt(i)) {
+					
+					case 'a':	//Next
+					case 'e':	//Next
+					case 'i':	//Next
+					case 'o':	//Next
+					case 'u':
+						cadenaVocales.append(cadenaDada.charAt(i));
+						break;
+					default:
+						cadenaConsonantes.append(cadenaDada.charAt(i));
+				}		
 			}
 		}
 

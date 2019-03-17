@@ -26,6 +26,27 @@ public class Apartado030203 extends Apartado {
 		cabecera("01","");
 
 		// Inicio modificacion
+
+		int opcionSelcionada;
+
+		do{
+
+			System.out.println("Seleccione una opcion:");
+			System.out.println("[1] Bienvenida");
+			System.out.println("[2] Despedida");
+			System.out.println("[3] Salir");
+
+			opcionSelcionada = Teclado.readInteger();
+
+			System.out.println("Opcion selecionada ["+opcionSelcionada+"]");
+			if (opcionSelcionada >3 || opcionSelcionada <1) {
+				System.out.println("La opcion es incorrecta");
+			}
+			System.out.println();
+
+		}while(opcionSelcionada != 3);
+		System.out.println("Saliendo...");
+
         // Fin modificacion
 	}
 
@@ -39,9 +60,21 @@ public class Apartado030203 extends Apartado {
 	 *
 	 */
 	public void ejercicio02() {
-		cabecera("02", "");
+		cabecera("02", "Leer numeros hasta que se de un 0 o dos iguales seguidos");
 
 		// Inicio modificacion
+
+		int nDado = 0;
+		int nDadoRetardo = 0; //Almacena el numero anterior al actual para comprobar si hay dos numeros iguales seguidos
+
+		do{
+			nDadoRetardo = nDado;
+
+			System.out.println("Introduzca un numero");
+			nDado = Teclado.readInteger();
+
+		}while((nDadoRetardo != nDado) && (nDado!=0));
+		
 		// Fin modificacion
 	}
 
@@ -55,9 +88,29 @@ public class Apartado030203 extends Apartado {
 	 * 
 	 */
 	public void ejercicio03() {
-		cabecera("03", "");
+		cabecera("03", "Leer rectangulos hasta que un lado sea menor o igual que 0");
 
 		// Inicio modificacion
+
+		int base;
+		int altura;
+		Rectangulo rectangulo;
+
+
+		do{
+
+			System.out.println("Introduzca la base del rectangulo");
+			base = Teclado.readInteger();
+			System.out.println("Introduzca la altura del rectangulo");
+			altura = Teclado.readInteger();
+
+			rectangulo = new Rectangulo(base, altura);
+
+			System.out.println(rectangulo.toString());
+			System.out.println();
+
+		}while(base > 0 && altura > 0);
+
 		// Fin modificacion
 	}
 
@@ -82,9 +135,38 @@ public class Apartado030203 extends Apartado {
 	 * 
 	 */
 	public void ejercicio04() {
-		cabecera("04", "");
+		cabecera("04", "Numero perfecto");
 
 		// Inicio modificacion
+
+		int numero;
+		int divisor;
+		int sumaDivisores = 0;
+		int contador = 1;
+
+		System.out.println("Introduzca un numero");
+		numero = Teclado.readInteger();
+
+		do{
+
+			divisor =  contador;
+
+			if ( (numero % divisor) == 0 ) {
+				sumaDivisores = sumaDivisores + divisor;
+			}
+
+			contador++;
+
+		}while(contador < numero);
+
+
+
+		if (sumaDivisores == numero) {
+			System.out.println(numero + " es un numero perfecto");
+		}else{
+			System.out.println(numero + " no es un numero perfecto");
+		}
+
 		// Fin modificacion
 	}
 }

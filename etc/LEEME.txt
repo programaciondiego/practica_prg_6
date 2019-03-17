@@ -2,7 +2,7 @@ Practica P-CTL
 
 Alumno: Diego González López
 
-Horas dedicadas: 8 horas 0 minutos
+Horas dedicadas: 10 horas 0 minutos
 
 Problemas surgidos al realizar la practica:
 
@@ -35,6 +35,7 @@ Apartado 030101 Ejercicio 04
 		La sentencia (a || b) es true si a y b son true, como b=false, (a || b) es false.
 
 		Como ni (n1>=n2) ni (a || b) son true, (n1>=n2) && (a || b) es false, el if no se ejecuta.
+
 
 Apartado 030101 Ejercicio 09
 	

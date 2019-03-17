@@ -40,6 +40,13 @@ public class Cheque
     	boolean esFalso=false;
     	//Inicio modificacion - ejercicio02() de la clase Apartado030204 -.
     	
+        int contadorCeros = 0;
+        int numeroActual;
+        int contadorNoCeros = 0;
+
+        do{
+
+        }while(contadorCeros < 3 || contadorNoCeros < 4);
     	
     	
     	//Fin modificacion - ejercicio02() de la clase Apartado030204 -.
